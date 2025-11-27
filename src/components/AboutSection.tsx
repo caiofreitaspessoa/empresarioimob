@@ -27,16 +27,16 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-light">
+    <section className="py-16 md:py-24 px-6 md:px-4 bg-light">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-bg-dark">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-16">
+          <div className="space-y-4 md:space-y-6 text-center md:text-left">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-bg-dark leading-tight">
               A maior consultoria especializada em{" "}
               <span className="text-gradient">alavancagem com consórcio</span>{" "}
               no Brasil.
             </h2>
-            <p className="text-xl text-bg-dark/70">
+            <p className="text-base md:text-xl text-bg-dark/70">
               Somos uma consultoria focada em transformar renda em patrimônio real. 
               Combinamos inteligência financeira, análise imobiliária e estratégias 
               avançadas de consórcio para ajudar profissionais de alta renda a 
@@ -50,7 +50,7 @@ export const AboutSection = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 gap-5 md:gap-6 mb-10 md:mb-12">
           {features.map((feature, index) => (
             <FeatureCard key={index} {...feature} />
           ))}

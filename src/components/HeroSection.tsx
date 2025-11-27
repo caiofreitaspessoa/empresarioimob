@@ -23,30 +23,30 @@ export const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-8 md:px-16 py-20">
-        <div className="max-w-2xl space-y-8">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight text-white">
+      <div className="relative z-10 container mx-auto px-6 md:px-16 py-16 md:py-20">
+        <div className="max-w-2xl space-y-6 md:space-y-8">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold leading-tight text-white">
             Como profissionais de alta renda{" "}
             <span className="text-gradient">aceleram patrimônio</span>{" "}
             usando consórcio de forma inteligente e estratégica.
           </h1>
 
-          <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+          <p className="text-base md:text-xl text-white/90 leading-relaxed">
             Com o Método Patrimônio de Elite, você transforma parte da sua renda em imóveis 
             de alta qualidade — que se pagam com o tempo — sem juros, sem volatilidade e 
             com previsibilidade total.
           </p>
 
-          <p className="text-base md:text-lg text-white/80 italic">
+          <p className="text-sm md:text-lg text-white/80 italic">
             Você já domina sua carreira. Agora é hora de dominar a construção do patrimônio 
             que acompanha o seu esforço.
           </p>
 
-          <div className="pt-4">
+          <div className="pt-2 md:pt-4">
             <Button 
               onClick={scrollToForm}
               size="lg"
-              className="bg-[#B8860B] hover:bg-[#9A7209] text-white transition-all duration-300 text-lg px-10 py-7 rounded-lg group shadow-lg hover:shadow-xl"
+              className="bg-[#B8860B] hover:bg-[#9A7209] text-white transition-all duration-300 text-base md:text-lg px-8 md:px-10 py-6 md:py-7 rounded-lg group shadow-lg hover:shadow-xl w-full md:w-auto"
             >
               Agende sua consultoria
               <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
