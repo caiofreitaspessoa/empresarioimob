@@ -1,53 +1,62 @@
-import { CTAButton } from "./CTAButton";
-import heroImage from "@/assets/hero-skyline.jpg";
+import { Button } from "@/components/ui/button";
+import { ArrowDown } from "lucide-react";
+import heroImage from "@/assets/hero-luxury-house.jpg";
 
 export const HeroSection = () => {
+  const scrollToForm = () => {
+    const formSection = document.getElementById('formulario');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
           src={heroImage} 
-          alt="Modern cityscape" 
-          className="w-full h-full object-cover opacity-30"
+          alt="Luxury modern house" 
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1A2F] via-[#142840]/90 to-[#0A1A2F]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20 text-center">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <div className="inline-block">
-            <span className="text-accent text-sm font-semibold tracking-wider uppercase px-4 py-2 rounded-full border border-accent/30 bg-accent/10">
-              Consultoria em Consórcio
-            </span>
-          </div>
-          
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight">
+      <div className="relative z-10 container mx-auto px-8 md:px-16 py-20">
+        <div className="max-w-2xl space-y-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight text-white">
             Como profissionais de alta renda{" "}
             <span className="text-gradient">aceleram patrimônio</span>{" "}
             usando consórcio de forma inteligente e estratégica.
           </h1>
 
-          <p className="text-xl md:text-2xl text-secondary leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-white/90 leading-relaxed">
             Com o Método Patrimônio de Elite, você transforma parte da sua renda em imóveis 
             de alta qualidade — que se pagam com o tempo — sem juros, sem volatilidade e 
             com previsibilidade total.
           </p>
 
-          <p className="text-lg text-muted-foreground italic max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-white/80 italic">
             Você já domina sua carreira. Agora é hora de dominar a construção do patrimônio 
             que acompanha o seu esforço.
           </p>
 
-          <div className="pt-6">
-            <CTAButton />
+          <div className="pt-4">
+            <Button 
+              onClick={scrollToForm}
+              size="lg"
+              className="bg-[#B8860B] hover:bg-[#9A7209] text-white transition-all duration-300 text-lg px-10 py-7 rounded-lg group shadow-lg hover:shadow-xl"
+            >
+              Agende sua consultoria
+              <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
+            </Button>
           </div>
         </div>
       </div>
 
       {/* Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0A1A2F] to-transparent z-10" />
     </section>
   );
 };
