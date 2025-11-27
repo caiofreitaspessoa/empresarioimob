@@ -43,8 +43,10 @@ export default {
           DEFAULT: "hsl(var(--highlight))",
           foreground: "hsl(var(--highlight-foreground))",
         },
-        silver: "hsl(var(--silver))",
-        graphite: "hsl(var(--graphite))",
+        "bg-light": "hsl(var(--bg-light))",
+        "bg-dark": "hsl(var(--bg-dark))",
+        "bg-purple": "hsl(var(--bg-purple))",
+        "bg-white": "hsl(var(--bg-white))",
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",

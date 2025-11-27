@@ -32,10 +32,10 @@ export const ForWhoSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4">
+    <section className="py-24 px-4 bg-dark">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white">
             Essa estratégia é{" "}
             <span className="text-gradient">pra você se</span>...
           </h2>

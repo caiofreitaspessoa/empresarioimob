@@ -8,49 +8,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Base futurista escuro */
-    --background: 216 65% 8%;
-    --foreground: 210 20% 98%;
+    /* Azul petróleo profundo - #0A1A2F */
+    --background: 210 60% 11%;
+    --foreground: 0 0% 100%;
 
-    --card: 216 50% 12%;
-    --card-foreground: 210 20% 98%;
+    --card: 210 50% 15%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 216 50% 12%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 210 50% 15%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Azul petróleo para botões - #223D5A */
-    --primary: 208 45% 24%;
+    /* Azul elétrico - #2D8CFF */
+    --primary: 210 100% 59%;
     --primary-foreground: 0 0% 100%;
 
-    /* Cinza neblina - #A7AFBF */
-    --secondary: 218 14% 70%;
-    --secondary-foreground: 216 65% 8%;
+    /* Cinza claro premium - #E8ECF3 */
+    --secondary: 220 29% 93%;
+    --secondary-foreground: 210 60% 11%;
 
-    --muted: 216 40% 18%;
-    --muted-foreground: 218 14% 70%;
+    --muted: 210 40% 20%;
+    --muted-foreground: 220 29% 93%;
 
-    /* Azul neon suave - #4DB8FF */
-    --accent: 199 100% 65%;
-    --accent-foreground: 216 65% 8%;
+    /* Azul elétrico - #2D8CFF */
+    --accent: 210 100% 59%;
+    --accent-foreground: 0 0% 100%;
 
-    /* Roxo petróleo - #4C3F91 */
-    --highlight: 250 40% 41%;
+    /* Roxo profundo - #4A3AFF */
+    --highlight: 243 100% 62%;
     --highlight-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 216 40% 20%;
-    --input: 216 40% 20%;
-    --ring: 199 100% 65%;
+    --border: 210 40% 25%;
+    --input: 210 40% 25%;
+    --ring: 210 100% 59%;
 
     --radius: 0.75rem;
 
-    /* Prata metálico - #D4D7DC */
-    --silver: 210 14% 85%;
-    
-    /* Preto grafite - #0D0D0D */
-    --graphite: 0 0% 5%;
+    /* Backgrounds alternados */
+    --bg-light: 220 29% 93%;
+    --bg-dark: 210 60% 11%;
+    --bg-purple: 243 100% 62%;
+    --bg-white: 0 0% 100%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -91,14 +91,38 @@ All colors MUST be HSL.
   }
 
   .glass-card {
-    @apply bg-card/50 backdrop-blur-md border border-border/50 rounded-lg;
+    @apply bg-card/30 backdrop-blur-sm border border-accent/20 rounded-xl;
   }
 
   .glow-accent {
-    box-shadow: 0 0 20px rgba(77, 184, 255, 0.3);
+    box-shadow: 0 0 30px rgba(45, 140, 255, 0.3);
   }
 
   .glow-highlight {
-    box-shadow: 0 0 20px rgba(76, 63, 145, 0.3);
+    box-shadow: 0 0 30px rgba(74, 58, 255, 0.3);
+  }
+
+  .btn-gradient {
+    @apply bg-gradient-to-r from-accent to-highlight;
+  }
+
+  .bg-light {
+    background: hsl(var(--bg-light));
+    color: hsl(var(--bg-dark));
+  }
+
+  .bg-dark {
+    background: hsl(var(--bg-dark));
+    color: hsl(var(--bg-white));
+  }
+
+  .bg-purple {
+    background: hsl(var(--bg-purple));
+    color: hsl(var(--bg-white));
+  }
+
+  .bg-white {
+    background: hsl(var(--bg-white));
+    color: hsl(var(--bg-dark));
   }
 }

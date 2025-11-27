@@ -6,6 +6,7 @@ import { AboutSection } from "@/components/AboutSection";
 import { ForWhoSection } from "@/components/ForWhoSection";
 import { ProcessSection } from "@/components/ProcessSection";
 import { FinalCTASection } from "@/components/FinalCTASection";
+import { ContactSection } from "@/components/ContactSection";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <ForWhoSection />
       <ProcessSection />
       <FinalCTASection />
+      <ContactSection />
     </div>
   );
 };

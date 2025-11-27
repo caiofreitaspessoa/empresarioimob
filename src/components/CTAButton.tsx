@@ -18,7 +18,7 @@ export const CTAButton = ({ onClick, className = "" }: CTAButtonProps) => {
     <Button 
       onClick={onClick || scrollToForm}
       size="lg"
-      className={`bg-primary hover:bg-accent hover:text-accent-foreground transition-all duration-300 glow-accent text-lg px-8 py-6 group ${className}`}
+      className={`btn-gradient hover:opacity-90 transition-all duration-300 glow-accent text-lg px-8 py-6 group ${className}`}
     >
       Agende sua consultoria
       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
