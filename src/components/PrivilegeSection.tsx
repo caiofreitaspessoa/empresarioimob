@@ -37,9 +37,26 @@ export const PrivilegeSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {benefits.map((benefit, index) => (
-            <FeatureCard key={index} {...benefit} />
-          ))}
+          {benefits.map((benefit, index) => {
+            const Icon = benefit.icon;
+            return (
+              <div key={index} className="bg-white/95 border border-gray-200 rounded-2xl p-8 hover:border-accent transition-all duration-300 hover:shadow-lg group">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <Icon className="w-8 h-8 text-accent" strokeWidth={1.5} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold mb-3 group-hover:text-accent transition-colors text-bg-dark">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <div className="text-center">

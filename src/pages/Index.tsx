@@ -7,6 +7,7 @@ import { ForWhoSection } from "@/components/ForWhoSection";
 import { ProcessSection } from "@/components/ProcessSection";
 import { FinalCTASection } from "@/components/FinalCTASection";
 import { ContactSection } from "@/components/ContactSection";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -20,6 +21,9 @@ const Index = () => {
       <ProcessSection />
       <FinalCTASection />
       <ContactSection />
+      
+      {/* Floating WhatsApp Button */}
+      <WhatsAppButton />
     </div>
   );
 };

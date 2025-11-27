@@ -1,8 +1,18 @@
 import { CTAButton } from "./CTAButton";
+import buildingsImage from "@/assets/buildings-luxury-dark.jpg";
 
 export const FinalCTASection = () => {
   return (
     <section className="py-32 px-4 relative overflow-hidden bg-purple">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={buildingsImage} 
+          alt="Luxury buildings" 
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#4A3AFF]/90 via-[#4A3AFF]/80 to-[#4A3AFF]/90" />
+      </div>
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center space-y-8">
           <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight text-white">
