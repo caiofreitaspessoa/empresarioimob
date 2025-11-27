@@ -27,29 +27,29 @@ export const PrivilegeSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-dark">
+    <section className="py-16 md:py-24 px-6 md:px-4 bg-dark">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight">
             O que antes era privilégio dos milionários,{" "}
             <span className="text-gradient">agora está nas suas mãos</span>.
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 gap-5 md:gap-6 mb-10 md:mb-12">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
-              <div key={index} className="bg-white/95 border border-gray-200 rounded-2xl p-8 hover:border-accent transition-all duration-300 hover:shadow-lg group">
-                <div className="flex items-start gap-4">
+              <div key={index} className="bg-white/95 border border-gray-200 rounded-2xl p-6 md:p-8 hover:border-accent transition-all duration-300 hover:shadow-lg group text-center md:text-left">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
                   <div className="flex-shrink-0">
                     <Icon className="w-8 h-8 text-accent" strokeWidth={1.5} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-3 group-hover:text-accent transition-colors text-bg-dark">
+                    <h3 className="text-lg md:text-xl font-semibold mb-3 group-hover:text-accent transition-colors text-bg-dark">
                       {benefit.title}
                     </h3>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="text-gray-700 leading-relaxed text-sm md:text-base">
                       {benefit.description}
                     </p>
                   </div>

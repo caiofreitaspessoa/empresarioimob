@@ -32,16 +32,16 @@ export const ForWhoSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-dark">
+    <section className="py-16 md:py-24 px-6 md:px-4 bg-dark">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 text-white leading-tight">
             Essa estratégia é{" "}
             <span className="text-gradient">pra você se</span>...
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-10 md:mb-12">
           {criteria.map((item, index) => (
             <FeatureCard key={index} {...item} />
           ))}

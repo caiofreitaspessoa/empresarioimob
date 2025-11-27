@@ -37,20 +37,20 @@ export const MethodSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-light">
+    <section className="py-16 md:py-24 px-6 md:px-4 bg-light">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-bg-dark">
+        <div className="text-center mb-12 md:mb-16 space-y-4">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-bg-dark leading-tight">
             Como funciona o{" "}
             <span className="text-gradient">Método Patrimônio de Elite</span>?
           </h2>
-          <p className="text-xl text-bg-dark/70 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-bg-dark/70 max-w-3xl mx-auto">
             Uma estratégia validada e previsível para construir patrimônio através do 
             consórcio imobiliário — de forma segura, escalável e inteligente.
           </p>
         </div>
 
-        <div className="grid gap-6 mb-12">
+        <div className="grid gap-5 md:gap-6 mb-10 md:mb-12">
           {steps.map((step, index) => (
             <FeatureCard key={index} {...step} />
           ))}
