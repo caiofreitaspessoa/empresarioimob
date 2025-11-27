@@ -27,10 +27,10 @@ export const PrivilegeSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-background to-muted/20">
+    <section className="py-24 px-4 bg-dark">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
             O que antes era privilégio dos milionários,{" "}
             <span className="text-gradient">agora está nas suas mãos</span>.
           </h2>

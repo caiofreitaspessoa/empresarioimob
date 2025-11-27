@@ -1,45 +1,53 @@
 import { FeatureCard } from "./FeatureCard";
 import { CTAButton } from "./CTAButton";
-import { Award, BarChart3, Users, Headphones } from "lucide-react";
+import { Target, Shield, Heart, Award } from "lucide-react";
 
 export const AboutSection = () => {
   const features = [
     {
-      icon: Award,
+      icon: Target,
       title: "Especialistas em crescimento patrimonial",
-      description: "Equipe dedicada exclusivamente a estratégias de alavancagem através de consórcio."
+      description: "Foco em estratégias que geram riqueza previsível."
     },
     {
-      icon: BarChart3,
+      icon: Shield,
       title: "Análise completa de consórcios",
-      description: "Avaliação profunda de administradoras, grupos e cartas para maximizar resultados."
+      description: "Verificamos administradoras, grupos e oportunidades."
     },
     {
-      icon: Users,
+      icon: Heart,
       title: "Foco em proteção familiar e segurança",
-      description: "Construção de patrimônio sólido pensando no futuro das próximas gerações."
+      description: "Seu patrimônio como pilar do futuro da família."
     },
     {
-      icon: Headphones,
+      icon: Award,
       title: "Acompanhamento personalizado",
-      description: "Consultoria contínua em todas as etapas do processo de aquisição."
+      description: "Do diagnóstico até a expansão patrimonial."
     }
   ];
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-muted/20 to-background">
+    <section className="py-24 px-4 bg-light">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 space-y-6">
-          <h2 className="text-4xl md:text-5xl font-display font-bold">
-            A maior consultoria especializada em{" "}
-            <span className="text-gradient">alavancagem com consórcio</span>{" "}
-            no Brasil.
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Somos uma consultoria focada em transformar renda em patrimônio real. 
-            Combinamos inteligência financeira, análise imobiliária e estratégias avançadas 
-            de consórcio para ajudar profissionais de alta renda a construir ativos que se multiplicam.
-          </p>
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="space-y-6">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-bg-dark">
+              A maior consultoria especializada em{" "}
+              <span className="text-gradient">alavancagem com consórcio</span>{" "}
+              no Brasil.
+            </h2>
+            <p className="text-xl text-bg-dark/70">
+              Somos uma consultoria focada em transformar renda em patrimônio real. 
+              Combinamos inteligência financeira, análise imobiliária e estratégias 
+              avançadas de consórcio para ajudar profissionais de alta renda a 
+              construir ativos que se multiplicam.
+            </p>
+          </div>
+          
+          {/* Placeholder para foto da equipe */}
+          <div className="bg-gradient-to-br from-accent/10 to-highlight/10 rounded-xl aspect-square flex items-center justify-center border-2 border-dashed border-accent/30">
+            <p className="text-accent/50 font-semibold">Foto da Equipe</p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-12">

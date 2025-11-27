@@ -37,21 +37,21 @@ export const FormSection = () => {
   };
 
   return (
-    <section id="formulario" className="py-24 px-4">
+    <section id="formulario" className="py-24 px-4 bg-white">
       <div className="container mx-auto max-w-2xl">
         <div className="text-center mb-12 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-display font-bold">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-bg-dark">
             Descubra quanto você pode{" "}
             <span className="text-gradient">acelerar seu patrimônio</span>{" "}
             com consórcio.
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-bg-dark/70">
             Preencha e receba uma análise gratuita do seu potencial de crescimento 
             patrimonial através do Método Patrimônio de Elite.
           </p>
         </div>
 
-        <div className="glass-card p-8 md:p-12 glow-accent">
+        <div className="glass-card p-8 md:p-12 glow-accent bg-white/50">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="name" className="text-foreground">Nome completo *</Label>
@@ -119,7 +119,7 @@ export const FormSection = () => {
             <Button 
               type="submit"
               size="lg"
-              className="w-full bg-primary hover:bg-accent hover:text-accent-foreground transition-all duration-300 glow-accent text-lg py-6 group"
+              className="w-full btn-gradient hover:opacity-90 transition-all duration-300 glow-accent text-lg py-6 group"
             >
               Agende sua consultoria
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

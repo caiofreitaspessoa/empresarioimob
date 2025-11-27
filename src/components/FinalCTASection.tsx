@@ -2,18 +2,15 @@ import { CTAButton } from "./CTAButton";
 
 export const FinalCTASection = () => {
   return (
-    <section className="py-32 px-4 relative overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-muted/20 via-highlight/5 to-background" />
-      
+    <section className="py-32 px-4 relative overflow-hidden bg-purple">
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center space-y-8">
-          <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight">
+          <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight text-white">
             A liberdade financeira começa quando o seu{" "}
-            <span className="text-gradient">patrimônio trabalha por você</span>.
+            <span className="bg-gradient-to-r from-white to-accent bg-clip-text text-transparent">patrimônio trabalha por você</span>.
           </h2>
           
-          <div className="space-y-4 text-xl text-muted-foreground max-w-2xl mx-auto">
+          <div className="space-y-4 text-xl text-white/90 max-w-2xl mx-auto">
             <p>
               Você já domina o trabalho. Agora é hora de dominar o patrimônio.
             </p>
@@ -24,7 +21,7 @@ export const FinalCTASection = () => {
           </div>
 
           <div className="pt-8">
-            <CTAButton className="text-xl px-12 py-7" />
+            <CTAButton className="text-xl px-12 py-7 bg-white text-highlight hover:bg-white/90" />
           </div>
         </div>
       </div>
