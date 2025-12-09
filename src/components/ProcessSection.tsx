@@ -40,7 +40,8 @@ export const ProcessSection = () => {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16 items-center">
           {/* Left: Text */}
           <div className="space-y-3 md:space-y-4 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-bg-dark leading-tight">Sua Consultoria 360°<span className="text-gradient">360°</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-bg-dark leading-tight">
+              Sua Consultoria <span className="text-gradient">360°</span>
             </h2>
             <p className="text-base md:text-xl text-bg-dark/70 leading-relaxed">
               Com nossa consultoria 360°, você tem acesso a{" "}
