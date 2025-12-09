@@ -29,10 +29,10 @@ export const AboutSection = () => {
               no Brasil.
             </h2>
             <p className="md:text-xl text-bg-dark/70 text-sm">
-              Somos uma consultoria focada em transformar renda em patrimônio real. 
-              Combinamos inteligência financeira, análise imobiliária e estratégias 
-              avançadas de consórcio para ajudar profissionais de alta renda a 
-              construir ativos que se multiplicam.
+              Sou Caio Pessoa, especialista em alavancagem patrimonial e sócio da Performe Corretora, empresa com mais de 15 anos de mercado. Minha trajetória inclui passagens por instituições de alto nível, como Mirae Asset e BTG Pactual, o maior banco de investimentos da América Latina. Onde aprendi como grandes patrimônios são realmente construídos.
+            </p>
+            <p className="md:text-xl text-bg-dark/70 text-sm">
+              Hoje aplico essa experiência para ajudar profissionais a transformar renda em imóveis, valorização e segurança de longo prazo. Com estratégia, previsibilidade e zero improviso.
             </p>
           </div>
           
