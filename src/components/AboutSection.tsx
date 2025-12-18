@@ -1,6 +1,7 @@
 import { FeatureCard } from "./FeatureCard";
 import { CTAButton } from "./CTAButton";
-import { Target, Shield, Heart, Award } from "lucide-react";
+import { Target, Shield, Heart, Award, Pencil } from "lucide-react";
+import caioPessoa from "@/assets/caio-pessoa.png";
 export const AboutSection = () => {
   const features = [{
     icon: Target,
@@ -36,9 +37,21 @@ export const AboutSection = () => {
             </p>
           </div>
           
-          {/* Placeholder para foto da equipe */}
-          <div className="bg-gradient-to-br from-accent/10 to-highlight/10 rounded-xl aspect-square flex items-center justify-center border-2 border-dashed border-accent/30">
-            <p className="text-accent/50 font-semibold">Foto da Equipe</p>
+          {/* Foto de Caio Pessoa */}
+          <div className="relative group order-first md:order-last">
+            <div className="bg-gradient-to-br from-accent/10 to-highlight/10 rounded-xl overflow-hidden">
+              <img 
+                src={caioPessoa} 
+                alt="Caio Pessoa - Especialista em alavancagem patrimonial" 
+                className="w-full h-auto object-cover rounded-xl"
+              />
+            </div>
+            <button 
+              className="absolute top-3 right-3 bg-bg-dark/80 hover:bg-bg-dark text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              aria-label="Editar foto"
+            >
+              <Pencil className="w-4 h-4" />
+            </button>
           </div>
         </div>
 
