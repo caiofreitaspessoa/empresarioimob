@@ -98,7 +98,7 @@ export const FormSection = () => {
                 <SelectTrigger className="bg-background/50 border-border focus:border-accent h-12 md:h-11">
                   <SelectValue placeholder="Escolha sua preferência" />
                 </SelectTrigger>
-                <SelectContent className="bg-white border-border z-50">
+                <SelectContent className="bg-[hsl(220,29%,93%)] border-border z-50 text-[hsl(210,60%,11%)]">
                   <SelectItem value="1000-2000">de R$ 1.000,00 a R$ 2.000,00</SelectItem>
                   <SelectItem value="2000-3000">de R$ 2.000,00 a R$ 3.000,00</SelectItem>
                   <SelectItem value="3000-5000">de R$ 3.000,00 a R$ 5.000,00</SelectItem>
