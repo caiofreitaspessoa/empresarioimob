@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 export const FormSection = () => {
   const [formData, setFormData] = useState({
@@ -13,8 +14,9 @@ export const FormSection = () => {
     investment: "",
     termsAccepted: false
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Validação simples
@@ -28,16 +30,39 @@ export const FormSection = () => {
       return;
     }
 
-    // Aqui você pode integrar com um serviço de email ou CRM
-    toast.success("Formulário enviado com sucesso! Entraremos em contato em breve.");
+    setIsSubmitting(true);
 
-    // Limpar formulário
-    setFormData({
-      name: "",
-      whatsapp: "",
-      investment: "",
-      termsAccepted: false
-    });
+    try {
+      const { data, error } = await supabase.functions.invoke("send-to-zapier", {
+        body: {
+          name: formData.name,
+          whatsapp: formData.whatsapp,
+          investment: formData.investment,
+        },
+      });
+
+      if (error) {
+        console.error("Error sending to Zapier:", error);
+        toast.error("Erro ao enviar formulário. Tente novamente.");
+        return;
+      }
+
+      console.log("Form sent successfully:", data);
+      toast.success("Formulário enviado com sucesso! Entraremos em contato em breve.");
+
+      // Limpar formulário
+      setFormData({
+        name: "",
+        whatsapp: "",
+        investment: "",
+        termsAccepted: false
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Erro ao enviar formulário. Tente novamente.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -125,8 +150,13 @@ export const FormSection = () => {
               </div>
             </div>
 
-            <Button type="submit" size="lg" className="w-full btn-gradient transition-all duration-300 glow-accent md:text-lg md:py-7 group mt-6 py-6 text-base text-center opacity-95">
-              Enviar
+            <Button 
+              type="submit" 
+              size="lg" 
+              disabled={isSubmitting}
+              className="w-full btn-gradient transition-all duration-300 glow-accent md:text-lg md:py-7 group mt-6 py-6 text-base text-center opacity-95 disabled:opacity-50"
+            >
+              {isSubmitting ? "Enviando..." : "Enviar"}
             </Button>
           </form>
         </div>
