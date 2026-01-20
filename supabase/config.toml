@@ -1,1 +1,10 @@
 project_id = "rstgzkicrptylbekdfmy"
+
+[functions.send-to-zapier]
+verify_jwt = false
+
+[functions.meta-conversions]
+verify_jwt = false
+
+[functions.get-meta-pixel-id]
+verify_jwt = false

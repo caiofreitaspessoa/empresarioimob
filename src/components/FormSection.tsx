@@ -6,6 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { useMetaConversions } from "@/hooks/useMetaConversions";
 
 export const FormSection = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +17,7 @@ export const FormSection = () => {
     termsAccepted: false
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { trackLeadConversion } = useMetaConversions();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,6 +57,14 @@ export const FormSection = () => {
         toast.error("Erro ao enviar formulário. Tente novamente.");
         return;
       }
+
+      // Track conversion via Meta Pixel + Conversions API
+      await trackLeadConversion({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.whatsapp,
+        investment: formData.investment,
+      });
 
       console.log("Form sent successfully:", data);
       toast.success("Formulário enviado com sucesso! Entraremos em contato em breve.");
