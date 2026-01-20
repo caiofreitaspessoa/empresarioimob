@@ -10,6 +10,7 @@ import { supabase } from "@/integrations/supabase/client";
 export const FormSection = () => {
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     whatsapp: "",
     investment: "",
     termsAccepted: false
@@ -20,8 +21,15 @@ export const FormSection = () => {
     e.preventDefault();
 
     // Validação simples
-    if (!formData.name || !formData.whatsapp || !formData.investment) {
+    if (!formData.name || !formData.email || !formData.whatsapp || !formData.investment) {
       toast.error("Por favor, preencha todos os campos obrigatórios");
+      return;
+    }
+
+    // Validação de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Por favor, insira um e-mail válido");
       return;
     }
 
@@ -36,6 +44,7 @@ export const FormSection = () => {
       const { data, error } = await supabase.functions.invoke("send-to-zapier", {
         body: {
           name: formData.name,
+          email: formData.email,
           whatsapp: formData.whatsapp,
           investment: formData.investment,
         },
@@ -53,6 +62,7 @@ export const FormSection = () => {
       // Limpar formulário
       setFormData({
         name: "",
+        email: "",
         whatsapp: "",
         investment: "",
         termsAccepted: false
@@ -92,6 +102,22 @@ export const FormSection = () => {
                 onChange={e => setFormData({
                   ...formData,
                   name: e.target.value
+                })} 
+                className="bg-background/50 border-border focus:border-accent h-12 md:h-11" 
+                required 
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="email" className="text-foreground text-sm md:text-base">E-mail *</Label>
+              <Input 
+                id="email" 
+                type="email" 
+                placeholder="seu@email.com" 
+                value={formData.email} 
+                onChange={e => setFormData({
+                  ...formData,
+                  email: e.target.value
                 })} 
                 className="bg-background/50 border-border focus:border-accent h-12 md:h-11" 
                 required 

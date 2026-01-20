@@ -8,6 +8,7 @@ const corsHeaders = {
 
 interface FormData {
   name: string;
+  email: string;
   whatsapp: string;
   investment: string;
 }
@@ -42,6 +43,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         name: formData.name,
+        email: formData.email,
         whatsapp: formData.whatsapp,
         investment: formData.investment,
         timestamp: new Date().toISOString(),
