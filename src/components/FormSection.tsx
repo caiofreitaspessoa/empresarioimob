@@ -67,16 +67,9 @@ export const FormSection = () => {
       });
 
       console.log("Form sent successfully:", data);
-      toast.success("Formulário enviado com sucesso! Entraremos em contato em breve.");
-
-      // Limpar formulário
-      setFormData({
-        name: "",
-        email: "",
-        whatsapp: "",
-        investment: "",
-        termsAccepted: false
-      });
+      
+      // Redirect to thank you page
+      window.location.href = "https://obrigado-contato.lovable.app";
     } catch (error) {
       console.error("Error submitting form:", error);
       toast.error("Erro ao enviar formulário. Tente novamente.");
