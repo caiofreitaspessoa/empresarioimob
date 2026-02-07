@@ -43,6 +43,23 @@ export const FormSection = () => {
     setIsSubmitting(true);
 
     try {
+      // Save lead to database
+      const { error: dbError } = await supabase
+        .from("leads")
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          whatsapp: formData.whatsapp,
+          investment: formData.investment,
+        });
+
+      if (dbError) {
+        console.error("Error saving lead to database:", dbError);
+        toast.error("Erro ao enviar formulário. Tente novamente.");
+        return;
+      }
+
+      // Send to Zapier
       const { data, error } = await supabase.functions.invoke("send-to-zapier", {
         body: {
           name: formData.name,
@@ -54,8 +71,7 @@ export const FormSection = () => {
 
       if (error) {
         console.error("Error sending to Zapier:", error);
-        toast.error("Erro ao enviar formulário. Tente novamente.");
-        return;
+        // Don't return - lead is already saved, just log the error
       }
 
       // Track conversion via Meta Pixel + Conversions API
