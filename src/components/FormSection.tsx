@@ -148,7 +148,7 @@ export const FormSection = () => {
               <Input 
                 id="whatsapp" 
                 type="tel" 
-                placeholder="Formato: (xx) 9-xxxx-xxxx" 
+                placeholder="(XX) 9XXXX-XXXX"
                 value={formData.whatsapp} 
                 onChange={e => setFormData({
                   ...formData,
