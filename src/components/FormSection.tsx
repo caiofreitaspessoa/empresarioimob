@@ -43,13 +43,17 @@ export const FormSection = () => {
     setIsSubmitting(true);
 
     try {
+      // Format whatsapp with DDI 55
+      const rawDigits = formData.whatsapp.replace(/\D/g, "");
+      const whatsappWithDDI = rawDigits.startsWith("55") ? rawDigits : `55${rawDigits}`;
+
       // Save lead to database
       const { error: dbError } = await supabase
         .from("leads")
         .insert({
           name: formData.name,
           email: formData.email,
-          whatsapp: formData.whatsapp,
+          whatsapp: whatsappWithDDI,
           investment: formData.investment,
         });
 
