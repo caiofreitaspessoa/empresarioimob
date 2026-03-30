@@ -68,7 +68,7 @@ export const FormSection = () => {
         body: {
           name: formData.name,
           email: formData.email,
-          whatsapp: formData.whatsapp,
+          whatsapp: whatsappWithDDI,
           investment: formData.investment,
         },
       });
@@ -82,7 +82,7 @@ export const FormSection = () => {
       await trackLeadConversion({
         name: formData.name,
         email: formData.email,
-        phone: formData.whatsapp,
+        phone: whatsappWithDDI,
         investment: formData.investment,
       });
 
