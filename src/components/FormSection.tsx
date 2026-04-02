@@ -43,9 +43,9 @@ export const FormSection = () => {
     setIsSubmitting(true);
 
     try {
-      // Format whatsapp with DDI 55
+      // Format whatsapp: keep only digits (DDD + number)
       const rawDigits = formData.whatsapp.replace(/\D/g, "");
-      const whatsappWithDDI = rawDigits.startsWith("55") ? rawDigits : `55${rawDigits}`;
+      const whatsappFormatted = rawDigits.startsWith("55") ? rawDigits.slice(2) : rawDigits;
 
       // Save lead to database
       const { error: dbError } = await supabase
