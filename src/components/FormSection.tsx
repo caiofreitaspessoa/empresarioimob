@@ -43,9 +43,9 @@ export const FormSection = () => {
     setIsSubmitting(true);
 
     try {
-      // Format whatsapp with DDI 55
+      // Format whatsapp: keep only digits (DDD + number)
       const rawDigits = formData.whatsapp.replace(/\D/g, "");
-      const whatsappWithDDI = rawDigits.startsWith("55") ? rawDigits : `55${rawDigits}`;
+      const whatsappFormatted = rawDigits.startsWith("55") ? rawDigits.slice(2) : rawDigits;
 
       // Save lead to database
       const { error: dbError } = await supabase
@@ -53,7 +53,7 @@ export const FormSection = () => {
         .insert({
           name: formData.name,
           email: formData.email,
-          whatsapp: whatsappWithDDI,
+          whatsapp: whatsappFormatted,
           investment: formData.investment,
         });
 
@@ -68,7 +68,7 @@ export const FormSection = () => {
         body: {
           name: formData.name,
           email: formData.email,
-          whatsapp: whatsappWithDDI,
+          whatsapp: whatsappFormatted,
           investment: formData.investment,
         },
       });
@@ -82,7 +82,7 @@ export const FormSection = () => {
       await trackLeadConversion({
         name: formData.name,
         email: formData.email,
-        phone: whatsappWithDDI,
+        phone: whatsappFormatted,
         investment: formData.investment,
       });
 
