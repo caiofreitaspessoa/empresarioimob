@@ -43,7 +43,7 @@ export const FormSection = () => {
     setIsSubmitting(true);
 
     try {
-      // Format whatsapp: keep only digits (DDD + number)
+      // Format whatsapp: keep only digits - DDD + number, no DDI
       const rawDigits = formData.whatsapp.replace(/\D/g, "");
       const whatsappFormatted = rawDigits.startsWith("55") ? rawDigits.slice(2) : rawDigits;
 
